@@ -24,7 +24,7 @@ public class SkattPrinter {
 			JOptionPane.showMessageDialog(null, "Program avsluttes pga gjentatte innmatingsfeil.");
 		else {
 			brutto = Integer.parseInt(bruttoTxt);
-			if (brutto >= 190350 && brutto <= 267899) {        //bug
+			if (brutto >= 190350 && brutto <= 267899) {        
 				skatteklasse = 1;
 				sats = 0.017;
 			} else if (brutto >= 267900 && brutto <= 643799) {
@@ -44,7 +44,7 @@ public class SkattPrinter {
 			if (skatteklasse != 0)
 				melding = "En bruttoinntekt på kr." + brutto 
 						+ " plasserer deg i skatteklasse " + skatteklasse
-						+ " og medfører en trinnskattsats på " + java.lang.Math.round(sats*100) + "%." + "\n"
+						+ " og medfører en trinnskattsats på " + java.lang.Math.round(sats*1000)/10.0 + "%." + "\n"
 						+ "Din trinnskatt blir da kr." + (int) (brutto * sats) 
 						+ ", og din nettoutbetaling blir kr."
 						+ (int) (brutto - brutto * sats);
