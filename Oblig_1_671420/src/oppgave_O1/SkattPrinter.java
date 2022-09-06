@@ -33,7 +33,7 @@ public class SkattPrinter {
 			} else if (brutto >= 643800 && brutto <= 969199) {
 				skatteklasse = 3;
 				sats = 0.134;
-			} else if (brutto >= 969200 && brutto <= 1999999) { //bug
+			} else if (brutto >= 969200 && brutto <= 1999999) { 
 				skatteklasse = 4;
 				sats = 0.164;
 			}
@@ -44,7 +44,7 @@ public class SkattPrinter {
 			if (skatteklasse != 0)
 				melding = "En bruttoinntekt på kr." + brutto 
 						+ " plasserer deg i skatteklasse " + skatteklasse
-						+ " og medfører en trinnskattsats på " + sats*100 + "%." + "\n"
+						+ " og medfører en trinnskattsats på " + java.lang.Math.round(sats*100) + "%." + "\n"
 						+ "Din trinnskatt blir da kr." + (int) (brutto * sats) 
 						+ ", og din nettoutbetaling blir kr."
 						+ (int) (brutto - brutto * sats);
